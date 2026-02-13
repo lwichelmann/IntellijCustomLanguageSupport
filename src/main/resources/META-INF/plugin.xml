@@ -1,0 +1,48 @@
+<idea-plugin>
+    <id>com.github.lwichelmann.c3po</id>
+    <name>C3PO Language Support</name>
+    <vendor>lwichelmann</vendor>
+
+    <description><![CDATA[
+        Language support for the C3PO programming language.
+        <br/>
+        <b>Features:</b>
+        <ul>
+            <li>Syntax highlighting for keywords, strings, numbers, operators, and comments</li>
+            <li>Brace matching for <code>{}</code> and <code>()</code></li>
+            <li>Line comment support (<code>//</code>)</li>
+            <li>Color settings page for customizing highlighting</li>
+            <li>Basic parsing with error recovery</li>
+        </ul>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType
+                name="C3PO File"
+                implementationClass="com.github.lwichelmann.c3po.C3poFileType"
+                fieldName="INSTANCE"
+                language="C3PO"
+                extensions="c3po"/>
+
+        <lang.parserDefinition
+                language="C3PO"
+                implementationClass="com.github.lwichelmann.c3po.parser.C3poParserDefinition"/>
+
+        <lang.syntaxHighlighterFactory
+                language="C3PO"
+                implementationClass="com.github.lwichelmann.c3po.highlighting.C3poSyntaxHighlighterFactory"/>
+
+        <colorSettingsPage
+                implementation="com.github.lwichelmann.c3po.highlighting.C3poColorSettingsPage"/>
+
+        <lang.braceMatcher
+                language="C3PO"
+                implementationClass="com.github.lwichelmann.c3po.C3poBraceMatcher"/>
+
+        <lang.commenter
+                language="C3PO"
+                implementationClass="com.github.lwichelmann.c3po.C3poCommenter"/>
+    </extensions>
+</idea-plugin>
