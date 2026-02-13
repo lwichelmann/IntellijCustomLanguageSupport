@@ -1,0 +1,14 @@
+// Hello World in C3PO
+var greeting = "Hello, World!";
+var count = 42;
+var name = "C3PO";
+
+// Print a variable
+print greeting;
+
+// For loop with a block
+for {
+    var x = 1;
+    var y = 2;
+    print x + y;
+}
