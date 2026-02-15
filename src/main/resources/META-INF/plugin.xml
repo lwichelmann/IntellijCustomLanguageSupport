@@ -44,5 +44,11 @@
         <lang.commenter
                 language="C3PO"
                 implementationClass="com.github.lwichelmann.c3po.C3poCommenter"/>
+
+        <configurationType
+                implementation="com.github.lwichelmann.c3po.run.C3poRunConfigurationType"/>
+
+        <runConfigurationProducer
+                implementation="com.github.lwichelmann.c3po.run.C3poRunConfigurationProducer"/>
     </extensions>
 </idea-plugin>
